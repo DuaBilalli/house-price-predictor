@@ -22,7 +22,7 @@ try:
     # print(conn)
     cur = conn.cursor()
 
-    query = 'SELECT * FROM house;'
+    query = 'SELECT area, price FROM house;'
     cur.execute(query)
 
     rows = cur.fetchall() # varg
