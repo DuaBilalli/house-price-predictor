@@ -3,7 +3,8 @@ import numpy as np
 import pandas as pd 
 import joblib
 
-from src.prepare import prepare
+sys.path.append("src")
+from prepare import prepare
 
 train, test = prepare()
 

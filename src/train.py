@@ -6,7 +6,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import cross_val_score
 from xgboost import XGBRegressor
 
-from src.prepare import prepare
+sys.path.append("src")
+from prepare import prepare
 
 train_data, test_data = prepare()
 

@@ -1,11 +1,11 @@
 import pandas as pd
 
 def prepare():
-    train_data = pd.read_csv("data/train-house.cv")
+    train_data = pd.read_csv("data/train-house.csv")
     test_data = pd.read_csv("data/test-house.csv")
 
     print(f"Train: {train_data.shape[0]} rreshta, {train_data.shape[1]} kolona")
-    print(f"Test: {test_data.shape[0]} rreshta, {train_data.shape[1]} kolona")
+    print(f"Test: {test_data.shape[0]} rreshta, {test_data.shape[1]} kolona")
 
     cols_drop = ["PoolQC", "MiscFeature", "Alley", "Fence", "Id"]
     
