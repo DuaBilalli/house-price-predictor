@@ -11,7 +11,7 @@ from prepare import prepare
 
 train_data, test_data = prepare()
 
-cat_cols = train_data.select_dtypes(include="object").columns.tolist()
+cat_cols = train_data.select_dtypes(include=["object", "str"]).columns.tolist()
 print(f"Kolonat kategorike: {len(cat_cols)}")
 
 encoders = {}

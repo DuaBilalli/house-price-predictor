@@ -44,6 +44,15 @@ def prepare():
                 train_data[col] = train_data[col].fillna(0)
                 test_data[col] = test_data[col].fillna(0)
 
+    for col in test_data.columns:
+        if test_data[col].isnull().sum() > 0:
+            if pd.api.types.is_numeric_dtype(test_data[col]):
+                fill_val = train_data[col].median() if col in train_data.columns else 0
+                test_data[col] = test_data[col].fillna(fill_val)
+            else:
+                fill_val = train_data[col].mode()[0] if col in train_data.columns else "None"
+                test_data[col] = test_data[col].fillna(fill_val)
+
     print("\nPas pastrimit:")
     print(f"\nTrain: {train_data.isnull().sum().sum()}")
     print(f"\nTest: {test_data.isnull().sum().sum()}")
