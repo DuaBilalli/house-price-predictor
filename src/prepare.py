@@ -54,8 +54,8 @@ def prepare():
                 test_data[col] = test_data[col].fillna(fill_val)
 
     print("\nPas pastrimit:")
-    print(f"\nTrain: {train_data.isnull().sum().sum()}")
-    print(f"\nTest: {test_data.isnull().sum().sum()}")
+    print(f"Train: {train_data.isnull().sum().sum()}")
+    print(f"Test: {test_data.isnull().sum().sum()}")
 
     return train_data, test_data
 

@@ -15,16 +15,16 @@ encoders = saved['encoders']
 for col, le in encoders.items():
     test[col] = le.transform(test[col].astype(str))
 
-print("Encoding is finished")
+print("\nEncoding is finished")
 
 test_X = test.drop(columns=["SalePrice"], errors="ignore")
 log_predictions = model.predict(test_X)
 predictions = np.expm1(log_predictions)
 
-print(f"Parashikime te gjeneruara: {len(predictions)}") 
-print(f"\nCmimi minimal: ${predictions.min():>10,.0f}") 
-print(f"\nCmimi maksimal: ${predictions.max():>10,.0f}") 
-print(f"\nCmimi mesatar: ${predictions.mean():>10,.0f}")
+print(f"\nParashikime te gjeneruara: {len(predictions)}") 
+print(f"Cmimi minimal: ${predictions.min():>10,.0f}") 
+print(f"Cmimi maksimal: ${predictions.max():>10,.0f}") 
+print(f"Cmimi mesatar: ${predictions.mean():>10,.0f}")
 
 test_ids = pd.read_csv("data/test-house.csv")["Id"]
 submission = pd.DataFrame({
