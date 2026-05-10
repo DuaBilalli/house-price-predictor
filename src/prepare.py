@@ -53,7 +53,7 @@ def prepare():
                 fill_val = train_data[col].mode()[0] if col in train_data.columns else "None"
                 test_data[col] = test_data[col].fillna(fill_val)
 
-    print("\nPas pastrimit:")
+    print("\nPas pastrimit (numri i vlerave null):")
     print(f"Train: {train_data.isnull().sum().sum()}")
     print(f"Test: {test_data.isnull().sum().sum()}")
 
